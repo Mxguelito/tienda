@@ -6,6 +6,10 @@ services:
     branch: main
     healthCheckPath: /
     envVars:
+        startCommand: |
+      php artisan migrate --force
+      php artisan serve --host 0.0.0.0 --port $PORT
+
       - key: APP_KEY
         sync: false
       - key: APP_ENV
