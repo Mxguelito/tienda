@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: tienda
+    env: docker
+    plan: free
+    branch: main
+    healthCheckPath: /
+    envVars:
+      - key: APP_KEY
+        sync: false
+      - key: APP_ENV
+        value: production
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d4rstp15pdvs73bqibsg-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: tienda_db_vkog
+      - key: DB_USERNAME
+        value: tienda_db_vkog_user
+      - key: DB_PASSWORD
+        sync: false
