@@ -1,0 +1,1788 @@
+/* ================================ */
+/*       TESLA STYLE GLOBAL         */
+/* ================================ */
+
+body {
+     
+    background: #0D0D0D;
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+/* ================================ */
+/*       NAVBAR TESLA               */
+/* ================================ */
+
+.navbar-tesla {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.25);
+}
+
+.navbar-tesla .nav-link,
+.navbar-tesla .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+.navbar-tesla .nav-link:hover {
+    color: #A78BFA !important;
+}
+
+.navbar-tesla .btn-login {
+    background: #7C3AED;
+    border-radius: 8px;
+    padding: 6px 14px;
+    color: white;
+    transition: 0.25s;
+}
+
+.navbar-tesla .btn-login:hover {
+    background: #A78BFA;
+}
+
+
+
+/* ================================= */
+/*          HERO TESLA               */
+/* ================================= */
+
+.hero-full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 20px;
+}
+
+.hero-center {
+    max-width: 900px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.hero-title span {
+    color: #a855f7;
+}
+
+.hero-sub {
+    color: #d1d1d1;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-cta {
+    padding: 12px 28px;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.hero-img-wrap img {
+    width: 100%;
+    border-radius: 14px;
+    margin-top: 20px;
+    box-shadow: 0 0 35px rgba(124,58,237,0.35);
+}
+
+
+.hero {
+    max-width: 1400px;
+    margin: auto;
+}
+.hero h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(124, 58, 237, 0.35);
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+}
+
+
+.hero h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 70px;
+    height: 4px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+}
+
+.hero {
+    animation: fadeUp 1.3s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.hero p {
+    font-size: 17px;
+    color: #cfcfcf;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.25);
+    transition: 0.7s ease;
+    transform: translateY(0);
+}
+
+.hero img:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 
+        0 0 50px rgba(124, 58, 237, 0.45),
+        0 0 80px rgba(124, 58, 237, 0.25);
+}
+
+
+
+
+/* ================================= */
+/*     PRODUCT CARDS TESLA PRO       */
+/* ================================= */
+
+.card.product-card {
+    background: #0F0F0F;
+    border-radius: 18px;
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    padding-bottom: 20px;
+    transition: 0.35s ease-in-out;
+    color: white;
+    overflow: hidden;
+}
+
+.card.product-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 35px rgba(124, 58, 237, 0.35);
+}
+
+.card.product-card img {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.25);
+    transition: 0.35s ease;
+}
+
+.card.product-card:hover img {
+    opacity: 0.92;
+    transform: scale(1.08);
+}
+
+.card.product-card .card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card.product-card .card-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.price-tesla {
+    color: #A78BFA !important;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.card.product-card p.text-muted {
+    color: #CCC !important;
+}
+
+.badge-stock {
+    background: linear-gradient(90deg,#7C3AED,#9F67FF);
+    border: none !important;
+    color: #fff !important;
+    padding: 8px 14px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: 0.25s;
+}
+
+.badge-stock:hover {
+    filter: brightness(1.25);
+    transform: translateY(-2px);
+}
+
+.btn-tesla-outline {
+    display: block;
+    margin: 8px auto;
+    width: 70%;
+    text-align: center;
+    padding: 10px 14px;
+    background: linear-gradient(90deg,#7C3AED,#A78BFA);
+    border-radius: 14px;
+    border: none;
+    color: white !important;
+    font-weight: 700;
+    box-shadow:
+        0 0 8px rgba(124,58,237,0.4),
+        0 0 18px rgba(167,139,250,0.35);
+    transition: 0.25s;
+}
+
+.btn-tesla-outline:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 0 12px rgba(124,58,237,0.55),
+        0 0 25px rgba(167,139,250,0.45);
+}
+
+
+
+/* ================================= */
+/*         DETALLE PRODUCTO          */
+/* ================================= */
+
+.product-detail-card {
+    display: flex;
+    gap: 40px;
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(124,58,237,0.25);
+    box-shadow: 0 0 25px rgba(124,58,237,0.15);
+}
+
+.product-image img {
+    width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 0 35px rgba(124,58,237,0.35);
+}
+
+.product-info .title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.product-info .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #A78BFA;
+}
+
+.product-info .desc {
+    color: #cfcfcf;
+    margin-bottom: 20px;
+}
+
+.stock-badge {
+    padding: 10px 20px;
+    background: linear-gradient(90deg,#7C3AED,#9F67FF);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+
+
+/* ================================= */
+/*           BOTONES TESLA           */
+/* ================================= */
+
+.btn-tesla-primary {
+    background: linear-gradient(90deg,#7C3AED,#9F67FF);
+    color: #fff !important;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.btn-tesla-primary:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 25px rgba(124,58,237,0.65);
+}
+
+.btn-edit-tesla {
+    background: #2563EB;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-delete-tesla {
+    background: #DC2626;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+
+
+/* ================================= */
+/*       FORMULARIOS TESLA           */
+/* ================================= */
+
+.tesla-form-card {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #111;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid rgba(124,58,237,0.3);
+    box-shadow: 0 0 25px rgba(124,58,237,0.15);
+}
+
+.title-tesla {
+    color: #A78BFA;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.label {
+    color: #ccc;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-tesla {
+    width: 100%;
+    background: #1A1A1A;
+    border: 1px solid rgba(124,58,237,0.35);
+    padding: 12px;
+    border-radius: 12px;
+    color: #fff;
+    transition: 0.25s;
+}
+
+.input-tesla:focus {
+    outline: none;
+    border-color: #A78BFA;
+    box-shadow: 0 0 12px rgba(124,58,237,0.4);
+}
+
+.input-tesla-file {
+    background: transparent;
+    border: none;
+    color: #ccc;
+}
+
+.group {
+    margin-bottom: 22px;
+}
+
+.img-edit-preview {
+    width: 150px;
+    border-radius: 12px;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+}
+
+.btns-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-tesla-save {
+    width: 48%;
+    padding: 12px;
+    background: linear-gradient(90deg,#7C3AED,#9F67FF);
+    border: none;
+    color: white;
+    border-radius: 14px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.btn-tesla-save:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 22px rgba(124,58,237,0.6);
+}
+
+.btn-tesla-cancel {
+    width: 48%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border-radius: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-tesla-cancel:hover {
+    background: #444;
+}
+
+
+
+/* ================================= */
+/*       FOOTER TESLA                */
+/* ================================= */
+
+/* ========================= */
+/*    FOOTER TESLA PRO       */
+/* ========================= */
+
+footer {
+    background: #0a0a0a;
+    padding: 60px 0 30px 0;
+    border-top: none;
+    position: relative;
+    color: #d6d6d6;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+}
+
+/* 🔥 FADE gigante tipo Apple */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0; /* <--- YA NO SUBE A TAPAR EL FORMULARIO */
+    left: 0;
+    width: 100%;
+    height: 120px; /* más chico para que quede suave */
+    background: linear-gradient(
+        to bottom,
+        rgba(124,58,237,0.22),
+        rgba(10,10,10,0)
+    );
+    filter: blur(25px);
+    pointer-events: none; /* <--- ESTO EVITA QUE BLOQUEE CLICS */
+}
+
+
+/* Línea elegante */
+footer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        rgba(124, 58, 237, 0) 0%,
+        rgba(124, 58, 237, 0.6) 50%,
+        rgba(124, 58, 237, 0) 100%
+    );
+    filter: blur(5px);
+}
+
+/* Columnas */
+footer .footer-column h4 {
+    color: #ffffff;
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(124,58,237,0.4);
+}
+
+footer .footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .footer-column ul li a {
+    color: #c3c3c3;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer .footer-column ul li a:hover {
+    color: #a855f7;
+    padding-left: 6px;
+}
+
+/* Contacto */
+footer .footer-contact span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Frase final */
+footer .footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+
+
+.footer h5,
+.footer h6 {
+    color: #A78BFA;
+}
+
+.footer a {
+    color: #CCC;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #FFF;
+}
+
+/* Acción del Admin: Editar / Eliminar — Centrado */
+.admin-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* CENTRA TODO */
+    gap: 12px;             /* separación entre botones */
+    margin-top: 20px;
+}
+
+/* Ajuste de tamaño de botones */
+.admin-actions a,
+.admin-actions button {
+    width: 220px;          /* mismo ancho los dos */
+    text-align: center;
+}
+
+.btn-back-tesla {
+    display: inline-block;
+    margin-top: 20px;
+    color: #A78BFA;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-back-tesla:hover {
+    color: #fff;
+}
+/* =============================== */
+/*  EFECTO 3D TESLA PARA BOTONES   */
+/* =============================== */
+
+.btn-tesla-primary,
+.btn-edit-tesla,
+.btn-delete-tesla {
+    transition: 0.35s ease-in-out;
+    transform: translateY(0px);
+    box-shadow: 0 0 0px rgba(124,58,237,0.0);
+}
+
+.btn-tesla-primary:hover,
+.btn-edit-tesla:hover,
+.btn-delete-tesla:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 0 18px rgba(124,58,237,0.55),
+        0 0 35px rgba(124,58,237,0.25);
+}
+.product-info .price {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 12px;
+    background: rgba(124,58,237,0.15);
+    backdrop-filter: blur(4px);
+    transition: 0.35s ease;
+}
+
+.product-info .price:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 0 15px rgba(124,58,237,0.55),
+        0 0 25px rgba(124,58,237,0.35);
+}
+.btn-tesla-primary {
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    transition: 0.25s ease-in-out;
+}
+
+.boton-agregar-wrapper {
+    margin-top: 30px !important;
+    margin-bottom: 40px !important;
+    display: block;
+}
+.boton-agregar-wrapper .btn-tesla-primary {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    transition: 0.35s ease-in-out !important;
+}
+
+.boton-agregar-wrapper .btn-tesla-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow:
+        0 0 8px rgba(124, 58, 237, 0.80),
+        0 0 20px rgba(124, 58, 237, 0.40),
+        inset 0 0 4px rgba(255, 255, 255, 0.15);
+}
+
+/* ===================================================== */
+/*       ESTILO TESLA PARA DETALLE DE ORDEN (ADMIN)      */
+/* ===================================================== */
+
+.order-container {
+    background: #0d0d0d;
+    color: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid rgba(186, 104, 200, 0.4);
+    box-shadow: 0 0 25px rgba(186, 104, 200, 0.25);
+}
+
+.order-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ba68c8;
+    text-shadow: 0 0 10px rgba(186, 104, 200, 0.9);
+}
+
+.order-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+}
+
+.order-table {
+    background: #151515;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(186, 104, 200, 0.3);
+}
+
+.order-table thead {
+    background: #ba68c8;
+    color: #000;
+}
+
+.order-table tbody tr {
+    background: #111;
+    color: #fff;
+    transition: 0.2s ease-in-out;
+}
+
+.order-table tbody tr:hover {
+    background: #1d1d1d;
+    transform: scale(1.01);
+}
+
+.btn-tesla-back {
+    background: transparent;
+    color: #18ffff;
+    border: 2px solid #18ffff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+.btn-tesla-back:hover {
+    background: #18ffff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px #18ffff;
+}
+
+.btn-tesla-primary {
+    background: linear-gradient(135deg, #ba68c8, #f48fb1);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-tesla-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(244, 143, 177, 0.9);
+}
+
+/* ===================================== */
+/*   HISTORIAL & DETALLE DE COMPRAS      */
+/* ===================================== */
+
+/* Título grande Tesla */
+.tesla-title {
+    color: #ba68c8;
+    font-size: 32px;
+    font-weight: 800;
+    text-shadow: 0 0 12px #ba68c8;
+    margin-bottom: 25px;
+}
+
+/* Caja que envuelve la tabla (historial) */
+.tesla-table-container {
+    background: #000000cc;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(186, 104, 200, 0.4);
+    box-shadow: 0 0 20px rgba(186, 104, 200, 0.25);
+}
+
+/* Tabla Tesla reutilizable */
+.tesla-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.tesla-table thead tr {
+    background: #111;
+    border-bottom: 2px solid #ba68c8;
+}
+
+.tesla-table th {
+    padding: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.tesla-table td {
+    padding: 12px;
+}
+
+.tesla-table tbody tr {
+    border-bottom: 1px solid #333;
+    transition: 0.25s ease;
+}
+
+.tesla-table tbody tr:hover {
+    background: #1a1a1a;
+    box-shadow: inset 0 0 20px rgba(186, 104, 200, 0.35);
+}
+
+/* Botón "Ver detalle" en historial */
+.btn-tesla-details {
+    background: #ba68c8;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+    border: none;
+}
+
+.btn-tesla-details:hover {
+    background: #f48fb1;
+    box-shadow: 0 0 14px rgba(244, 143, 177, 0.9);
+}
+
+/* Caja de info del detalle compra (usuario) */
+.tesla-detail-box {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(186, 104, 200, 0.4);
+    box-shadow: 0 0 18px rgba(186, 104, 200, 0.3);
+    margin-bottom: 25px;
+}
+
+/* Subtítulo "Productos" */
+.tesla-subtitle {
+    color: #f48fb1;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(244, 143, 177, 0.8);
+}
+
+/* Precio total destacado */
+.total-price {
+    color: #18ffff;
+    font-weight: 700;
+    text-shadow: 0 0 10px #18ffff;
+}
+
+/* ================================================= */
+/*              CARRITO ESTILO TESLA                */
+/* ================================================= */
+
+.carrito-box-tesla {
+    background: #0f0f0f;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid rgba(124, 58, 237, 0.35);
+    box-shadow: 0 0 40px rgba(124,58,237,0.25);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Cabecera de tabla */
+.carrito-box-tesla table thead {
+    background: rgba(124, 58, 237, 0.25);
+    color: #fff;
+    border-bottom: 2px solid rgba(124, 58, 237, 0.45);
+}
+
+/* Celdas */
+.carrito-box-tesla table tbody tr {
+    background: #111;
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.carrito-box-tesla table tbody tr:hover {
+    background: #1a1a1a;
+    transform: scale(1.01);
+}
+
+/* Botones + y - */
+.btn-cantidad {
+    background: #7c3aed;
+    color: white !important;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.btn-cantidad:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.55);
+}
+
+/* Botón eliminar */
+.btn-eliminar-tesla {
+    background: #e11d48;
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.btn-eliminar-tesla:hover {
+    background: #f43f5e;
+    box-shadow: 0 0 15px rgba(244,63,94,0.6);
+    transform: translateY(-2px);
+}
+
+/* =============================== */
+/*       BOTONES DEL CARRITO       */
+/* =============================== */
+
+.cart-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-cart {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+/* Botón Seguir comprando */
+.btn-cart-secondary {
+    background: #222;
+    color: #fff;
+    border: 1px solid rgba(124,58,237,0.6);
+}
+
+.btn-cart-secondary:hover {
+    background: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(124,58,237,0.45);
+}
+
+/* Botón Finalizar compra */
+.btn-cart-primary {
+    background: linear-gradient(90deg,#7c3aed,#a855f7);
+    color: white;
+    box-shadow: 0 0 12px rgba(124,58,237,0.45);
+}
+
+.btn-cart-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 0 20px rgba(124,58,237,0.7),
+        0 0 35px rgba(168,85,247,0.4);
+}
+
+.btn-tesla-admin {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border: none;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 8px;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0 0 10px #6a11cb88;
+}
+
+.btn-tesla-admin:hover {
+    background: linear-gradient(90deg, #8d2ee6, #3a8bff);
+    transform: translateY(-2px);
+    box-shadow: 0 0 14px #8d2ee6aa;
+}
+
+/* =============================== */
+/* RESPONSIVE - MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+
+    .navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+    /* Fondo del menú desplegado */
+    #navbarTesla {
+        background: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(12px);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    /* Links más prolijos */
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    /* Ícono de la campana más ajustado */
+    .navbar-nav .nav-item.position-relative span {
+        top: -5px;
+        right: 10px;
+    }
+
+    /* Botón de salir centrado */
+    form button.btn-login {
+        width: 100%;
+        margin-top: 10px;
+    }
+    /* Contenedor general del hero */
+    .hero-full {
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    /* Título */
+    .hero-full h1, 
+    .hero-full h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    /* Subtítulo */
+    .hero-full p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Botón */
+    .hero-full .btn {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    /* Imagen del hero */
+    .hero-full img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+     /* Contenedor del título y botón */
+    h2.mb-4 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .boton-agregar-wrapper {
+        text-align: center;
+    }
+
+    .boton-agregar-wrapper a {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* Ajustar columnas: 1 por fila en móvil */
+    .productos-row .col-md-3 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Card general */
+    .product-card {
+        border-radius: 18px;
+        overflow: hidden;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+
+    /* Imagen */
+    .product-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 18px 18px 0 0;
+        object-fit: cover;
+    }
+
+    /* Título */
+    .product-card .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* Precio */
+    .price-tesla {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    /* Descripción */
+    .product-card .text-muted {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 10px;
+        height: auto !important;
+    }
+
+    /* Badge de stock */
+    .badge-stock {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Botón detalle */
+    .btn-tesla-outline {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    /* Botón deshabilitado */
+    .btn-secondary {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+}
+
+/* ============================== */
+/*   PRODUCTO DETALLE RESPONSIVE  */
+/* ============================== */
+
+
+
+/* Info */
+.product-info .title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.product-info .price {
+    font-size: 28px;
+    color: #ba68c8;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-info .desc {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.stock-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #4caf50;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Acciones Admin */
+.admin-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit-tesla,
+.btn-delete-tesla,
+.btn-back-tesla {
+    display: inline-block;
+    padding: 10px 16px;
+    margin-top: 17px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+/* Editar */
+.btn-edit-tesla {
+    background: #18ffff25;
+    color: #18ffff;
+    border: 1px solid #18ffff;
+}
+
+/* Eliminar */
+.btn-delete-tesla {
+    background: #ff408125;
+    color: #ff4081;
+    border: 1px solid #ff4081;
+}
+
+/* Volver */
+.btn-back-tesla {
+    background: #ffffff15;
+    color: #fff;
+    border: 1px solid #ffffff30;
+}
+
+/* =============== */
+/* RESPONSIVE REAL */
+/* =============== */
+
+@media (max-width: 992px) {
+    .product-detail-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .product-info .title {
+        font-size: 26px;
+    }
+
+    .product-info .price {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-detail-card {
+        gap: 20px;
+    }
+
+    .product-info .title {
+        font-size: 22px;
+    }
+
+    .product-info .price {
+        font-size: 20px;
+    }
+
+    .btn-tesla-primary,
+    .btn-edit-tesla,
+    .btn-delete-tesla,
+    .btn-back-tesla {
+        width: 100%;
+        display: block;
+    }
+}
+/* ===================================== */
+/*     RESPONSIVE – HISTORIAL COMPRAS    */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+    /* Contenedor hace scroll horizontal elegante */
+    .tesla-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 15px;
+    }
+
+    /* La tabla se estira pero no se rompe */
+    .tesla-table {
+        min-width: 600px; /* ancho mínimo para evitar deformar */
+    }
+
+    /* Títulos centrados */
+    .tesla-title {
+        text-align: center;
+        font-size: 26px;
+    }
+
+    /* Encabezados más chicos */
+    .tesla-table thead th {
+        font-size: 14px;
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    /* Filas */
+    .tesla-table tbody td {
+        padding: 10px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    /* Botón Ver detalle full width */
+    .btn-tesla-details {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .tesla-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .tesla-table-container {
+        padding: 10px;
+    }
+
+    .tesla-table {
+        min-width: 550px;
+    }
+}
+/* ===================================== */
+/*     DETALLE DE COMPRA TESLA PRO       */
+/* ===================================== */
+.tesla-order-box {
+    background: rgba(0, 0, 0, 0.45) !important;
+    border: 1px solid rgba(186, 104, 200, 0.35) !important;
+    box-shadow: 0 0 25px rgba(186, 104, 200, 0.25) !important;
+    padding: 25px !important;
+    border-radius: 18px !important;
+
+    width: 100% !important;
+    max-width: 650px !important; /* si querés más ancho, te lo cambio */
+    margin: 25px auto !important;
+    
+    overflow: hidden;
+}
+.tesla-order-box .tesla-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+}
+/* Contenedor scroll SOLO para la tabla */
+.tabla-scroll {
+    max-height: 200px; /* Ajustá si querés más o menos */
+    overflow-y: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* Estilo suave de scroll */
+.tabla-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.tabla-scroll::-webkit-scrollbar-thumb {
+    background: rgba(186, 104, 200, 0.5);
+    border-radius: 10px;
+}
+
+
+
+.tesla-title {
+    color: #ba68c8;
+    text-shadow: 0 0 12px rgba(186, 104, 200, 0.8);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.tesla-label {
+    color: #f48fb1;
+    font-weight: bold;
+}
+
+/* tabla */
+.tesla-order-box .tesla-table {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.38);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(186, 104, 200, 0.35);
+}
+
+.tesla-order-box .tesla-table th {
+    background: rgba(186, 104, 200, 0.25);
+    padding: 12px;
+}
+
+.tesla-order-box .tesla-table td {
+    padding: 12px;
+}
+
+.tesla-order-box .tesla-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* botón volver */
+.btn-tesla-back {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: #333;
+    color: white;
+    transition: 0.25s;
+}
+
+.btn-tesla-back:hover {
+    background: #ba68c8;
+    box-shadow: 0 0 15px #ba68c8;
+    transform: translateY(-2px);
+}
+
+/* ========= RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+    .tesla-order-box {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .tesla-title {
+        font-size: 24px;
+    }
+
+    .tesla-table th,
+    .tesla-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-tesla-back {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ============================ */
+/*   BOTONES DE CANTIDAD MOBILE */
+/* ============================ */
+.btn-cantidad-mobile {
+    background: #7c3aed;
+    border: none;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-cantidad-mobile:hover {
+    background: #a855f7;
+    transform: scale(1.05);
+}
+
+/* ============================ */
+/*   BOTÓN ELIMINAR TESLA       */
+/* ============================ */
+.btn-eliminar-tesla {
+    background: #d32f2f;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    color: white;
+    width: 100%;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-eliminar-tesla:hover {
+    background: #ff5252;
+    transform: scale(1.05);
+}
+/* ===================== */
+/*     FORMULARIO TESLA   */
+/* ===================== */
+
+.tesla-form-card {
+    background: #0d0d0d;
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(124, 58, 237, 0.35);
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.25);
+}
+
+.input-tesla {
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: #111;
+    color: white;
+    transition: .2s;
+}
+
+.input-tesla:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 12px rgba(139, 92, 246, .4);
+}
+
+.label {
+    color: #c9c9c9;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-tesla-primary {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.btn-tesla-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(236, 72, 153, .5);
+}
+/* ========================================= */
+/*        CHECKOUT OK — TARJETA TESLA        */
+/* ========================================= */
+
+.checkout-ok-card {
+    width: 90%;
+    max-width: 420px;
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(186, 104, 200, 0.35);
+    border-radius: 18px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(186, 104, 200, 0.25);
+    backdrop-filter: blur(6px);
+    margin: 20px auto;
+}
+
+.checkout-ok-card h2 {
+    color: #d5b6ff;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.checkout-ok-card p {
+    color: #ddd;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.checkout-ok-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: linear-gradient(90deg, #a56cff, #ff75b9);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 14px rgba(186, 104, 200, 0.45);
+    transition: 0.25s;
+}
+
+.checkout-ok-btn:hover {
+    box-shadow: 0 0 22px rgba(255,118,200,0.65);
+}
+.carrito-precio-mobile {
+    color: #ffffff !important;
+    font-size: 15px;
+    text-shadow: 0 0 4px rgba(186,104,200,0.4);
+}
+/* ============================== */
+/*   DETALLE DE COMPRA (TESLA)    */
+/* ============================== */
+
+
+
+.tesla-title {
+    color: #d5b6ff;
+    font-weight: 700;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.tesla-label {
+    font-weight: 600;
+    color: #ff9ce6;
+}
+
+.tesla-table {
+    width: 100%;
+    background: #151515;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tesla-table th {
+    background: rgba(186,104,200,0.25);
+    color: #fff;
+}
+
+.tesla-table td, .tesla-table th {
+    padding: 10px 12px;
+    color: #eee;
+}
+
+.btn-tesla-back {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #00e6e6;
+    color: #00e6e6;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-tesla-back:hover {
+    background: rgba(0,230,230,0.15);
+}
+/* ============================= */
+/*    RESPONSIVE DETALLE COMPRA  */
+/* ============================= */
+@media (max-width: 768px) {
+
+    /* Caja principal */
+    .tesla-order-box {
+        width: 90% !important;
+        margin: 20px auto !important;
+        padding: 20px !important;
+    }
+
+    /* Tabla */
+    .tesla-table {
+        font-size: 14px !important;
+    }
+
+    .tesla-table th, 
+    .tesla-table td {
+        padding: 8px !important;
+    }
+
+    /* Botón Volver */
+    .btn-tesla-back {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 15px !important;
+        margin-top: 20px !important;
+    }
+}
+/* ============================= */
+/*        FOOTER TESLA PRO       */
+/* ============================= */
+
+.footer-tesla {
+    margin-top: 60px;
+    padding: 40px 20px 20px;
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0) 0%, 
+        rgba(180,140,255,0.12) 35%, 
+        rgba(0,0,0,0.45) 100%
+    );
+    color: #ddd;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-title {
+    color: #ba68c8;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 0 6px #ba68c8bb;
+}
+
+.footer-sub {
+    color: #f48fb1;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.footer-text {
+    max-width: 240px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+    color: #eee;
+}
+
+.footer-col a {
+    color: #e9c6ff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.footer-col a:hover {
+    color: #18ffff;
+    text-shadow: 0 0 10px #18ffff;
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    margin-top: 35px;
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ============================= */
+/*      FOOTER RESPONSIVE        */
+/* ============================= */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .footer-col {
+        min-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    footer::before {
+        height: 60px !important;   /* antes 120px */
+        filter: blur(15px) !important; 
+    }
+
+    footer {
+        padding-top: 20px !important; /* sube el contenido */
+    }
+}
+@media (max-width: 768px) {
+
+    .footer-center {
+        text-align: center !important;
+        margin-top: -10px !important;
+    }
+
+    .footer-center p {
+        margin: 0 auto !important;
+        max-width: 260px !important; /* controla el ancho */
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+
+    .footer-center h4,
+    .footer-center h5,
+    .footer-center h6 {
+        text-align: center !important;
+    }
+}
+@media (max-width: 768px) {
+    .footer-text {
+        text-align: center !important;
+        max-width: 260px !important;
+        margin: 0 auto !important;
+        line-height: 1.4 !important;
+        display: block !important;
+    }
+
+    .footer-title, .footer-sub, .footer-col ul, .footer-col ul li {
+        text-align: center !important;
+    }
+}
+/* ===== FIX FOOTER SOLO PARA HISTORIAL ===== */
+.historial-compras-wrapper {
+    margin-bottom: 120px !important;
+}
+/* ===================================================== */
+/* FIX DEFINITIVO PARA QUE EL FOOTER QUEDE ABAJO SIEMPRE */
+/* ===================================================== */
+
+.historial-min-height {
+    min-height: calc(100vh - 320px); /* ajusta según el tamaño del footer */
+    display: block;
+}
+
+

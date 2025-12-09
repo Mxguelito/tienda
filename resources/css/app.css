@@ -1,0 +1,9 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+.imagen-producto {
+    width: 100%;
+    height: 280px;       /* 🔥 Esto fuerza la altura igual en todas las imágenes */
+    object-fit: cover;   /* 🔥 Recorta la imagen sin deformarla */
+    border-radius: 8px;  /* opcional pero queda más lindo */
+}
