@@ -1,7 +1,7 @@
 services:
   - type: web
     name: tienda
-    env: docker
+    env: php
     plan: free
     branch: main
     healthCheckPath: /
