@@ -1,20 +1,23 @@
 services:
   - type: web
     name: tienda
-    env: php
+    env: docker
     plan: free
     branch: main
     healthCheckPath: /
 
-    startCommand: |
-      php artisan migrate --force
+    startCommand: >
+      php artisan migrate --force &&
       php artisan serve --host 0.0.0.0 --port $PORT
 
     envVars:
-      - key: APP_KEY
-        sync: false
       - key: APP_ENV
         value: production
+      - key: APP_KEY
+        sync: false
+      - key: APP_DEBUG
+        value: false
+
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST
