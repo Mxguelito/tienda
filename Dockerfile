@@ -1,39 +1,36 @@
-# Etapa 1: Construcción
-FROM php:8.2-fpm AS build
+# Imagen base oficial PHP + Apache
+FROM php:8.2-apache
 
-# Instalar dependencias del sistema
+# Instalar dependencias
 RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
     libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql
+    unzip \
+    git \
+    && docker-php-ext-install pdo pdo_pgsql
 
-# Instalar Composer
-COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
-
-# Crear carpeta del proyecto
-WORKDIR /app
+# Habilitar mod_rewrite
+RUN a2enmod rewrite
 
 # Copiar archivos del proyecto
-COPY . .
+COPY . /var/www/html
 
-# Instalar dependencias de Laravel
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# Definir directorio de trabajo
+WORKDIR /var/www/html
 
-# Generar cache de Laravel
+# Instalar Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Instalar dependencias del proyecto
+RUN composer install --no-dev --optimize-autoloader
+
+# Laravel necesita permisos para storage
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Cachear config, rutas y vistas
 RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-
-# Etapa 2: Producción
-FROM php:8.2-fpm
-
-WORKDIR /app
-
-# Copiar resultado de la construcción
-COPY --from=build /app /app
-
-# Exponer puerto
+# Apache debe escuchar el puerto que Render asigna (8080)
 EXPOSE 8080
 
-# Comando para correr Laravel
-CMD php artisan serve --host=0.0.0.0 --port=8080
+# Iniciar el servidor web
+CMD ["apache2-foreground"]
