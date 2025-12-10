@@ -1,36 +1,23 @@
-# Imagen base con Apache
-FROM php:8.2-apache
+# Etapa 1: Build
+FROM php:8.2-fpm AS build
 
-# Instalar extensiones requeridas
 RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    unzip \
-    git \
+    git unzip libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pdo_mysql
 
-# Activar mod_rewrite de Apache
-RUN a2enmod rewrite
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
-# Copiar archivos del proyecto al DOCUMENT ROOT correcto
-# Render espera que Laravel viva en /var/www/html, PERO SOLO EL CONTENIDO DE /public debe ser web
-COPY . /var/www/laravel
+WORKDIR /app
+COPY . .
 
-WORKDIR /var/www/laravel
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# Instalar dependencias
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
-    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
-    && rm composer-setup.php
+# Etapa 2: Runtime
+FROM php:8.2-fpm
 
-RUN composer install --no-dev --optimize-autoloader
+WORKDIR /app
+COPY --from=build /app /app
 
-# Copiar el contenido de /public a la carpeta pública de Apache
-RUN rm -rf /var/www/html/* \
-    && cp -r /var/www/laravel/public/* /var/www/html/ \
-    && chown -R www-data:www-data /var/www/html
-
-# Exponer puerto
 EXPOSE 8080
-
-# Iniciar Apache
-CMD ["apache2-foreground"]
+CMD php artisan serve --host=0.0.0.0 --port=8080
