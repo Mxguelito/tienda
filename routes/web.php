@@ -14,6 +14,15 @@ use App\Http\Controllers\NotificacionController;
 | PÚBLICO
 |--------------------------------------------------------------------------
 */
+Route::get('/debug-check', function () {
+    try {
+        DB::connection()->getPdo();
+        return 'DB OK';
+    } catch (\Exception $e) {
+        return 'ERROR DB: ' . $e->getMessage();
+    }
+});
+
 
 Route::get('/', [HomeController::class, 'index'])->name('inicio');
 Route::get('/productos', [ProductoController::class, 'index'])->name('productos');
