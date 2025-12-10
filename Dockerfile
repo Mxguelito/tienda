@@ -1,36 +1,36 @@
-# Imagen base oficial PHP + Apache
+# Imagen base con Apache
 FROM php:8.2-apache
 
-# Instalar dependencias
+# Instalar extensiones requeridas
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     unzip \
     git \
-    && docker-php-ext-install pdo pdo_pgsql
+    && docker-php-ext-install pdo pdo_pgsql pdo_mysql
 
-# Habilitar mod_rewrite
+# Activar mod_rewrite de Apache
 RUN a2enmod rewrite
 
-# Copiar archivos del proyecto
-COPY . /var/www/html
+# Copiar archivos del proyecto al DOCUMENT ROOT correcto
+# Render espera que Laravel viva en /var/www/html, PERO SOLO EL CONTENIDO DE /public debe ser web
+COPY . /var/www/laravel
 
-# Definir directorio de trabajo
-WORKDIR /var/www/html
+WORKDIR /var/www/laravel
 
-# Instalar Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+# Instalar dependencias
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+    && rm composer-setup.php
 
-# Instalar dependencias del proyecto
 RUN composer install --no-dev --optimize-autoloader
 
-# Laravel necesita permisos para storage
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+# Copiar el contenido de /public a la carpeta pública de Apache
+RUN rm -rf /var/www/html/* \
+    && cp -r /var/www/laravel/public/* /var/www/html/ \
+    && chown -R www-data:www-data /var/www/html
 
-# Cachear config, rutas y vistas
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
-
-# Apache debe escuchar el puerto que Render asigna (8080)
+# Exponer puerto
 EXPOSE 8080
 
-# Iniciar el servidor web
+# Iniciar Apache
 CMD ["apache2-foreground"]
