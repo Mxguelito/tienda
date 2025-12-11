@@ -1,4 +1,16 @@
 <?php
+Route::get('/debug', function () {
+    return [
+        'DB_CONNECTION' => env('DB_CONNECTION'),
+        'DB_HOST' => env('DB_HOST'),
+        'DB_DATABASE' => env('DB_DATABASE'),
+        'DB_USERNAME' => env('DB_USERNAME'),
+        'APP_ENV' => env('APP_ENV'),
+        'APP_DEBUG' => env('APP_DEBUG'),
+        'php_version' => phpversion(),
+    ];
+});
+
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -14,14 +26,7 @@ use App\Http\Controllers\NotificacionController;
 | PÚBLICO
 |--------------------------------------------------------------------------
 */
-Route::get('/debug-check', function () {
-    try {
-        DB::connection()->getPdo();
-        return 'DB OK';
-    } catch (\Exception $e) {
-        return 'ERROR DB: ' . $e->getMessage();
-    }
-});
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('inicio');
